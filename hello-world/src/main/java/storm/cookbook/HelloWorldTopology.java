@@ -27,7 +27,8 @@ public class HelloWorldTopology {
             conf.setNumWorkers(20);
             
             StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
-        } else {
+        } 
+        else {
         
             LocalCluster cluster = new LocalCluster();
             cluster.submitTopology("test", conf, builder.createTopology());
