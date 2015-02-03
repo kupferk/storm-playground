@@ -53,7 +53,7 @@
 				<configuration>
 					<mainClass>storm.cookbook.HelloWorldTopology</mainClass>
 				</configuration>
-			</plugin>
+        	</plugin>
 		</plugins>
 	</build>
 </project>

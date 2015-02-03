@@ -1,12 +1,23 @@
 package storm.cookbook;
 
+import java.util.Map;
+
+import org.json.simple.JSONValue;
+
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
+import backtype.storm.generated.AlreadyAliveException;
+import backtype.storm.generated.Nimbus.Client;
 import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.utils.NimbusClient;
 import backtype.storm.utils.Utils;
 
 public class HelloWorldTopology {
+	public static final String NIMBUS_HOST = "10.110.55.40";
+	public static final int NIMBUS_THRIFT_PORT = 6627;
+	public static final String ZOOKEEPER_SERVERS = "10.110.55.46";
+	public static final int ZOOKEEPER_PORT = 2181;
 
 	/**
 	 * @param args
@@ -24,8 +35,7 @@ public class HelloWorldTopology {
         conf.setDebug(true);
         
         if(args!=null && args.length > 0) {
-            conf.setNumWorkers(20);
-            
+        	conf.setNumWorkers(20);
             StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
         } 
         else {
