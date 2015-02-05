@@ -1,4 +1,4 @@
-package storm.cookbook;
+package com.dimajix.storm.helloworld;
 
 import java.util.Map;
 

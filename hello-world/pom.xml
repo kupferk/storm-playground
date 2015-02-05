@@ -33,7 +33,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>storm.cookbook.HelloWorldTopology</mainClass>
+							<mainClass>com.dimajix.storm.helloworld.HelloWorldTopology</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -51,7 +51,7 @@
                 <groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>storm.cookbook.HelloWorldTopology</mainClass>
+					<mainClass>com.dimajix.storm.helloworld.HelloWorldTopology</mainClass>
 				</configuration>
         	</plugin>
 		</plugins>

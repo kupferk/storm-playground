@@ -1,4 +1,4 @@
-package storm.cookbook;
+package com.dimajix.storm.helloworld;
 
 import java.util.Map;
 import java.util.Random;
@@ -39,7 +39,7 @@ public class HelloWorldSpout extends BaseRichSpout {
 
 	@Override
 	public void nextTuple() {
-		Utils.sleep(100);
+		// Utils.sleep(100);
 		final Random rand = new Random();
 		int instanceRandom = rand.nextInt(MAX_RANDOM);
 		if(instanceRandom == referenceRandom){

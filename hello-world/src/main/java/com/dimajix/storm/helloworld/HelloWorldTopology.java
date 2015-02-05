@@ -1,4 +1,4 @@
-package storm.cookbook;
+package com.dimajix.storm.helloworld;
 
 import java.util.Map;
 
@@ -32,13 +32,13 @@ public class HelloWorldTopology {
                 .shuffleGrouping("randomHelloWorld");
                 
         Config conf = new Config();
-        conf.setDebug(true);
         
         if(args!=null && args.length > 0) {
         	conf.setNumWorkers(20);
             StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
         } 
         else {
+            conf.setDebug(true);
         
             LocalCluster cluster = new LocalCluster();
             cluster.submitTopology("test", conf, builder.createTopology());
