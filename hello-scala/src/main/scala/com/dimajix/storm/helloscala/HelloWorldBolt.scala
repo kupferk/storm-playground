@@ -13,9 +13,13 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
 
+object HelloWorldBolt {
+  private val LOG:Logger = Logger.getLogger(classOf[HelloWorldBolt]);
+}
+
+
 class HelloWorldBolt extends BaseRichBolt {
-	private final val LOG = Logger.getLogger(classOf[HelloWorldBolt]);
-	private final val serialVersionUID:Long = -841805977046116528L;
+	private val serialVersionUID:Long = -841805977046116528L;
 	private var myCount:Int = 0;
 
 	@Override
@@ -28,7 +32,7 @@ class HelloWorldBolt extends BaseRichBolt {
 		if(test == "Hello World"){
 			myCount = myCount + 1;
 			System.out.println("Found a Hello World! My Count is now: " + Integer.toString(myCount));
-			LOG.debug("Found a Hello World! My Count is now: " + Integer.toString(myCount));
+			HelloWorldBolt.LOG.debug("Found a Hello World! My Count is now: " + Integer.toString(myCount));
 		}
 	}
 

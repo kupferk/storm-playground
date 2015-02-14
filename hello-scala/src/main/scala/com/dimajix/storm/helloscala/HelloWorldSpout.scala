@@ -14,9 +14,13 @@ import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
 
+object HelloWorldSpout {
+  private val LOG:Logger = Logger.getLogger(classOf[HelloWorldSpout]);
+}
+
+
 class HelloWorldSpout extends BaseRichSpout {
 	private val serialVersionUID:Long = -4646687160233411001L;
-	private val LOG:Logger = Logger.getLogger(classOf[HelloWorldSpout]);
 	private var collector:SpoutOutputCollector = _;
 	
 	private val referenceRandom = new Random().nextInt(MAX_RANDOM);
