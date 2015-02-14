@@ -6,11 +6,15 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-	<artifactId>hello-world</artifactId>
-	<name>hello-world</name>
+	<artifactId>hello-scala</artifactId>
+	<name>hello-scala</name>
 	<packaging>jar</packaging>
 
 	<dependencies>
+	    <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
@@ -32,7 +36,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.dimajix.storm.helloworld.HelloWorldTopology</mainClass>
+							<mainClass>com.dimajix.storm.helloscala.HelloWorldTopology</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -50,9 +54,21 @@
                 <groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.dimajix.storm.helloworld.HelloWorldTopology</mainClass>
+					<mainClass>com.dimajix.storm.helloscala.HelloWorldTopology</mainClass>
 				</configuration>
         	</plugin>
-		</plugins>
+        	<!-- Enable Scala compilation -->
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
 	</build>
 </project>
