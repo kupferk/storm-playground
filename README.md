@@ -25,11 +25,11 @@ nimbus.host: "123.45.678.890"
 
 To run on cluster
 
-    storm jar hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar storm.cookbook.HelloWorldTopology MyTopologyName
+    storm jar hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar com.dimajix.storm.helloworld.HelloWorldTopology MyTopologyName
     
 To run locally
 
-    storm jar hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar storm.cookbook.HelloWorldTopology
+    storm jar hello-world-1.0-SNAPSHOT-jar-with-dependencies.jar com.dimajix.storm.helloworld.HelloWorldTopology
 
 
 # Watch topology in web-ui
