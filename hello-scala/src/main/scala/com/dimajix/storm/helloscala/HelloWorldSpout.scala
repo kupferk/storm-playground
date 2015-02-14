@@ -1,4 +1,4 @@
-package com.dimajix.storm.helloworld;
+package com.dimajix.storm.helloscala;
 
 import java.util.Map;
 import java.util.Random;
